@@ -1,0 +1,250 @@
+<html>
+    <head>
+        <Title> Pet Point Multitasking System </Title>
+        <link rel="icon" type="image" href="TitleIcon.png">
+        
+        <!--Fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,500;1,14..32,500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,900;1,14..32,800&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Jersey+20&display=swap" rel="stylesheet">
+
+        <!--External Files Linking-->
+        <link rel="stylesheet" href="LandingPage.css">
+
+    </head>
+    <body>
+        <!-- Navigation Bar -->
+        <div class="navresponsive">
+            <nav class="navigationbar">
+                <div class="navgrid">
+
+                    <a href="#">
+                        <img class="navimagetitle" src="TitleName.png" alt="Name">
+                    </a>
+
+                    <div class="navlinks">
+                        <a class="navlink" href="LandingPage.html">Home</a>
+                        <a class="navlink" href="PetView.php">Pet Animals</a>
+                        <a class="navlink" href="StrayView.php">Stray Animals</a>
+                        <a class="navlink" href="PetMart.php">Pet Mart</a>
+                        <a class="navlink" href="VetView.php">Veterinarians</a>
+                    </div>
+
+                    <div class="navicons">
+                        <a href="Cart.php">
+                            <img class="navimage" src="Cart.png" alt="Cart">
+                        </a>
+                    </div>
+
+                    <div class="userwrap">
+                        <button class="user-btn" id="userBtn">
+                            <img class="navimage" src="User.png" alt="User">
+                        </button>
+
+                        <div class="user-dd" id="userMenu">
+                            <a href="#" id="openLogin">Login</a>
+                            <a href="#" id="openRegister">Register</a>
+                        </div>
+                    </div>
+
+                    <!-- Login Modal -->
+                    <div class="modal" id="loginModal">
+                        <div class="modal-card">
+                            
+                            <div class="modal-head">
+
+                            <h3 id="loginTitle">Login</h3>
+
+                            <button class="close-x" data-close="loginModal">x</button>
+                            </div>
+                            
+                            <form class="modal-body" action="login.php" method="POST">
+                                <div class="field">
+                                    <label for="login_username">Username</label>
+                                    <input id="login_username" name="username" type="text" required>
+                                </div>
+                                <div class="field">
+                                    <label for="login_password">Password</label>
+                                    <input id="login_password" name="password" type="password" required>
+                                </div>
+                                <div class="actions">
+                                    <button class="btn-primary" type="submit">Login</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Register Modal -->
+                    <div class="modal" id="registerModal">
+                        <div class="modal-card">
+                            
+                            <div class="modal-head">
+
+                            <h3 id="registerTitle">Create Account</h3>
+
+                            <button class="close-x" data-close="registerModal">x</button>
+                            </div>
+
+                            <form class="modal-body" action="register.php" method="POST">
+                                <div class="field">
+                                    <label for="reg_username">Username</label>
+                                    <input id="reg_username" name="username" type="text" required>
+                                </div>
+                                <div class="field">
+                                    <label for="reg_email">Email</label>
+                                    <input id="reg_email" name="email" type="email" required>
+                                </div>
+                                <div class="field">
+                                    <label for="reg_password">Password</label>
+                                    <input id="reg_password" name="password" type="password" minlength="6" required>
+                                </div>
+                                <div class="field">
+                                    <label for="reg_mobile">Mobile</label>
+                                    <input id="reg_mobile" name="mobile" type="tel" pattern="[0-9]{10,15}" required>
+                                </div>
+                                <div class="actions">
+                                    <button class="btn-primary" type="submit">Register</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <!--Chatbot-->
+        <div class="Chatbot">
+            <button class="Chatbtn">
+                <img class="ChatIcon" src="ChatBot02.png" alt="BotIcon">
+            </button>
+        </div>
+        <div class="chatbody">
+            <div class="Headder"> Medical Assistant </div>
+
+            <div class="ChatSpace"></div>
+
+            <input class="InputBox" type="text" placeholder="What's the emergency?">
+
+            <button class="SendBtn">
+                <div class="SendBtnBack">Send</div>
+            </button>
+        </div>
+
+        <div class="page01">
+            <img class="page01background" src="BlueBack.png">
+            <img class="dogimage" src="Dog 37.png" alt="">
+        </div>
+
+        <!--Gallery-->
+        <div class="Gallery">
+            <img id="GalleryCard" src="https://i.pinimg.com/1200x/bb/13/57/bb13574cad416bab09e22263e19f6fa6.jpg">
+            <img id="GalleryCard" src="https://i.pinimg.com/1200x/10/83/e0/1083e0f5495d7ad5c4c06ee3f6d63eff.jpg">
+            <img id="GalleryCard" src="https://i.pinimg.com/1200x/b2/c8/a9/b2c8a91eec559d48a41a0c9755bb2412.jpg">
+            <img id="GalleryCard" src="https://i.pinimg.com/736x/ae/aa/f2/aeaaf217ec018a0d216006b361bc99cf.jpg">
+            <img id="GalleryCard" src="https://i.pinimg.com/1200x/6f/ed/9a/6fed9afa8005637775ef45928a301003.jpg">
+            <img id="GalleryCard" src="https://i.pinimg.com/736x/be/a3/5f/bea35f59903b57ff7c95c5537f06fb07.jpg">
+            <img id="GalleryCard" src="https://i.pinimg.com/736x/3d/c8/cf/3dc8cf7cee436d049250a8d744e245f6.jpg">
+        </div>
+        
+        <!--Titles-->
+        <div class="Title">
+            <p> First Digitalized Platform for Pets in Sri Lanka </p>
+            <h1> WELCOME TO<br>PET POINT MULTITASKING SYSTEM </h1>
+        </div>
+
+        <a class="scrollbutton" href="#stop">
+            <div class="scrolltext"> FIND YOUR DREAM PET </div>
+        </a>
+
+        <!--Second Page-->
+        <div class="page02">
+            <div id="stop"></div>
+            <img class="page02background" src="Background2.png">
+        </div>
+
+
+        <div class="Title02">
+            <p> Explore with us </p>
+            <h1> WE HAVE <br> ALL YOUR NEEDS IN ONE PLACE </h1>
+
+            <div class="Cardbox">
+                <div class="card">
+                    <img class="cardimg" src="PetIcon.png" alt="PetIcon">
+
+                    <div class="CardDetailBox">
+                        <h1>Adopt Pets</h1>
+                        <p>Give loving homes to adorable pets waiting for a family. Find your perfect furry companion today.</p>
+                    </div>
+
+                    <a class="ButtonLink" href="PetView.php">
+                        <div class="ButtonBack">Read More</div>
+                    </a>
+                </div>
+
+                <div class="card">
+                    <img class="cardimg" src="StrayIcon.png" alt="StrayIcon">
+
+                    <div class="CardDetailBox">
+                        <h1>Stray Animals</h1>
+                        <p>Give loving homes to adorable pets waiting for a family. Find your perfect furry companion today.</p>
+                    </div>
+
+                    <a class="ButtonLink" href="StrayView.php">
+                        <div class="ButtonBack">Read More</div>
+                    </a>                    
+                </div>
+                
+                <div class="card">
+                    <img class="cardimg" src="SupplyIcon.png" alt="MartIcon">
+
+                    <div class="CardDetailBox">
+                        <h1>Pet Mart</h1>
+                        <p>Shop for quality food, toys, and accessories for your pet. Everything your pet needs</p>
+                    </div>
+
+                    <a class="ButtonLink" href="PetMart.php">
+                        <div class="ButtonBack">Read More</div>
+                    </a>
+
+                </div>
+                <div class="card">
+                    <img class="cardimg" src="VetIcon.png" alt="VetIcon">
+
+                    <div class="CardDetailBox">
+                        <h1>Book Vets</h1>
+                        <p>Schedule expert veterinary care with just a click. Keep your pets healthy and happy, always.</p>
+                    </div>
+
+                    <a class="ButtonLink" href="VetView.php">
+                        <div class="ButtonBack">Read More</div>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+
+        <!--Third Page-->
+        <div class="page03" id="Aboutus">
+            <div class="aboutusback">
+                <div class="aboutbox">
+                    <h2> About Us </h2>
+
+                    <p> 
+                        Sri Lanka's first all-in-one digital platform for pet adoption, stray care, pet products, and vet services.
+                        We help connect animals with loving homes and support pet owners with everything they need.
+                        Our goal is to promote responsible pet care across the country. Discover, adopt, and care all in one place with Pet Point.
+                    </p>
+
+                    <p> Landline: +94 11 222 4455 <br>
+                        Email: support@petpoint.lk
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <script src="LandingPage.js"></script>
+        
+    </body>
+</html>

@@ -1,0 +1,653 @@
+html {
+    scroll-behavior: smooth;
+}
+
+/*Navigation Bar*/
+.navresponsive {
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    top: 0.5vw;
+    z-index: 10;
+}
+.navigationbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    margin-left: 3.5vw;
+    max-width: 92vw;
+    background-color: white;
+    border: 0.2vw solid #0193F3;
+    border-radius: 10vw;
+}
+.navgrid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1vw;
+}
+.navlinks {
+    display: flex;
+    gap: 2vw;
+}
+.navicons {
+    margin-left: 12vw;
+    display: flex;
+}
+.navimagetitle {
+    margin-right: 12vw;
+    max-width: 12vw;
+}
+.navimage {
+    max-width: 2vw;
+    max-height: 2vw;
+}
+.navlink {
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 1vw;
+    text-decoration: none;
+    color: #000000;
+    position: relative;
+    transition: color 0.3s ease;
+}
+.navlink::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.2em;
+    width: 100%;
+    height: 2px;
+    background-color: #FF6E00;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+}
+.navlink:hover {
+    color: #FF6E00;
+}
+.navlink:hover::after {
+    transform: scaleX(1);
+}
+
+/* Positioning for the user icon & dropdown */
+.userwrap {
+    position: relative; 
+    display:inline-block;
+    margin-left: 1vw;
+}
+.user-btn { 
+    background:none; 
+    border:0; 
+    padding:0; 
+    cursor:pointer; 
+}
+.user-btn .navimage { 
+    width:32px; 
+    height:32px; 
+    border-radius:50%; 
+}
+.user-dd {
+    position:absolute; 
+    right:0; 
+    top:44px; 
+    min-width:180px;
+    background:#fff; 
+    border:1px solid #e5e7eb; 
+    border-radius:10px;
+    box-shadow:0 12px 30px rgba(0,0,0,.12); 
+    padding:6px; 
+    display:none; 
+    z-index:50;
+}
+.user-dd a {
+    display:block; 
+    padding:10px 12px; 
+    border-radius:8px; 
+    text-decoration:none;
+    color:#111; 
+    font-family:Inter, 
+    Arial, sans-serif; 
+    font-size:14px;
+}
+.user-dd a:hover { 
+    background:#f3f4f6; 
+}
+
+/* Modal base */
+.modal {
+    position:fixed;     
+    inset:0; 
+    display:none; 
+    align-items:center; 
+    justify-content:center;
+    background:rgba(0,0,0,.45); 
+    z-index:60; 
+    padding:20px;
+}
+.modal.open { 
+    display:flex; 
+}
+.modal-card {
+    width:100%; 
+    max-width:300px; 
+    background:#fff; 
+    border-radius:14px;
+    box-shadow:0 20px 60px rgba(0,0,0,.25); 
+    overflow:hidden;
+    font-family:Inter, Arial, sans-serif;
+}
+.modal-head {
+    background:#0193F3; 
+    color:#fff; 
+    padding:14px 18px; 
+    display:flex; 
+    align-items:center; 
+    justify-content:space-between;
+}
+.modal-head h3 { 
+    margin:0; 
+    font-size:18px; 
+    font-weight:800; 
+}
+.close-x { 
+    background:none; 
+    border:0; 
+    color:#fff; 
+    font-size:22px; 
+    line-height:1; 
+    cursor:pointer; 
+}
+.modal-body { 
+    padding:18px; 
+}
+.field { 
+    margin-bottom:12px; 
+}
+.field label { 
+    display:block; 
+    font-size:13px; 
+    margin-bottom:6px; 
+    color:#111; 
+    font-weight:600; 
+}
+.field input, .field select, .field textarea {
+    width:100%; 
+    padding:10px; 
+    border:1px solid #d1d5db; 
+    border-radius:8px; 
+    font-size:14px; 
+    box-sizing:border-box;
+}
+.actions { 
+    margin-top:14px; 
+}
+.btn-primary {
+    width:100%; 
+    padding:12px; 
+    border:0; 
+    border-radius:10px; 
+    cursor:pointer; 
+    font-weight:700; 
+    font-size:15px;
+    background:#FF6E00; 
+    color:#fff; 
+    transition:.25s;
+}
+.btn-primary:hover { 
+    background:#e65500; 
+}
+
+/* === Page 03 Chatbot UI === */
+.Chatbot {
+    display: flex;
+    position: sticky;
+    z-index: 9;
+    top: 35vw;
+    margin-left: 90vw;
+}
+.Chatbtn {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+.ChatIcon {
+    max-width: 6vw;
+}
+
+/* Chat Window */
+.chatbody {
+    position: sticky;
+    top: 8vw;
+    margin-top: -2vw;
+    margin-left: 68vw;
+    z-index: 9;
+    background-color: #ffffffec;
+    border: 0.1vw solid #FF6E00;
+    border-radius: 1.4vw;
+    width: 22vw;
+    height: 28vw;
+    display: flex;
+    flex-direction: column;
+
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    overflow: hidden;
+}
+.chatbody.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Header */
+.Headder {
+    font-family: "Inter", sans-serif;
+    font-weight: 900;
+    color: #ffffff;
+    font-size: 1vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0193F3;
+    height: 2vw;
+}
+
+/* Chat space with scroll */
+.ChatSpace {
+    flex: 1;
+    padding: 0.6vw;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6vw;
+    background: #f9fafb;
+}
+
+/* === Message Bubbles === */
+.msg {
+    max-width: 80%;
+    font-size: 0.9vw;
+    line-height: 1.4;
+    padding: 0.6vw 0.9vw;
+    border-radius: 1vw;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    box-shadow: 0 0.15vw 0.4vw rgba(0,0,0,0.1);
+}
+.msg.user {
+    align-self: flex-end;
+    background: #FF6E00;
+    color: #fff;
+    border-bottom-right-radius: 0.4vw;
+}
+.msg.bot {
+    align-self: flex-start;
+    background: #EAF4FF;
+    color: #0b1a2a;
+    border-bottom-left-radius: 0.4vw;
+}
+
+/* Typing Indicator */
+.typing {
+    align-self: flex-start;
+    display: inline-flex;
+    gap: 0.3vw;
+    background: #EAF4FF;
+    padding: 0.4vw 0.6vw;
+    border-radius: 0.8vw;
+}
+.typing .dot {
+    width: 0.45vw;
+    height: 0.45vw;
+    border-radius: 50%;
+    background: #7aa9d9;
+    animation: bounce 1s infinite ease-in-out;
+}
+.typing .dot:nth-child(2){ animation-delay: .15s; }
+.typing .dot:nth-child(3){ animation-delay: .3s; }
+@keyframes bounce {
+    0%,60%,100% { transform: translateY(0); opacity: .7; }
+    30%         { transform: translateY(-0.35vw); opacity: 1; }
+}
+
+/* Input + Send */
+.InputBox {
+    width: 22vw;
+    padding: 0.5vw;
+    outline: none;
+    border: none;
+    font-size: 1vw;
+    background: #fff;
+    border-top: 0.1vw solid #eee;
+}
+.SendBtn {
+    background-color: #FF6E00;
+    width: 22vw;
+    cursor: pointer;
+    border: none;
+}
+.SendBtnBack {
+    font-family: "Inter", sans-serif;
+    font-weight: 900;
+    color: #ffffff;
+    font-size: 1vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2vw;
+}
+.SendBtn:hover .SendBtnBack {
+    background: #e85d00;
+}
+
+
+/*Page 01 background*/
+.page01 {
+    display: flex;
+    position: relative;
+    z-index: 0;
+    justify-content: center;
+    top: -34vw;
+}
+.page01background {
+    z-index: 1;
+    max-width: 98%;
+    min-width: 98%;
+}
+.dogimage {
+    position: absolute;
+    z-index: 2;
+    top: 4vw;
+    left: 55vw;
+    max-width: 40%;
+    min-width: 40%;
+}
+
+/*Gallery*/
+.Gallery {
+    display: flex;
+    z-index: 3;
+    margin-top: -46vw;
+    margin-left: 3.5vw; 
+}
+#GalleryCard {
+    filter: saturate(0%) brightness(60%);
+    width: 4vw;
+    height: 10vw;
+    border: 0.1vw solid #ffffff;
+    object-fit: cover;
+    border-radius: 0.8vw;
+    transition: all ease 0.4s;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px 2px #00000020;
+}
+#GalleryCard:hover {
+    filter: saturate(150%) brightness(105%);
+    width: 15%;
+}
+
+/* Titles */
+.Title {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    z-index: 4;
+    margin-top: -30vw;
+    margin-left: 3.5vw;
+
+}
+.Title p {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    color: #ffffff;
+    font-size: 1.2vw;
+
+    display: flex;
+    z-index: 4;
+    margin: 0;
+    text-align: left;
+}
+.Title h1 {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 3vw;
+    color: #ffffff;
+
+    display: flex;
+    z-index: 4;
+    margin: 0;
+    text-align: left;
+}
+
+/* Scroll Button*/
+.scrollbutton {
+    margin-top: 4vw;
+    display: flex;
+    z-index: 9;
+    text-decoration: none;
+
+}
+.scrolltext {
+    font-family: "Jersey 20", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.4vw;
+    color: #ffffff;
+
+    display: flex;
+    z-index: 9;
+    padding: 0.6vw;
+    border-radius: 10vw;
+    margin-left: 3.5vw;
+    width: 14vw;
+    justify-content: center;
+    background-color: #FF6E00;
+}
+
+/*Page 02 background*/
+.page02 {
+    display: flex;
+    position: relative;
+    z-index: 0;
+    justify-content: center;
+    top: 22vw;
+}
+.page02background {
+    z-index: 1;
+    height: 43vw;
+    max-width: 98%;
+    min-width: 98%;
+}
+#stop {
+    margin-top: -1.5vw;
+}
+.Title02 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    z-index: 4;
+    margin-top: -16vw;
+    margin-left: 3.5vw;
+}
+.Title02 p {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    color: #ffffff;
+    font-size: 1.2vw;
+
+    display: flex;
+    z-index: 4;
+    margin: 0;
+    text-align: left;
+}
+.Title02 h1 {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 3vw;
+    color: #ffffff;
+
+    display: flex;
+    z-index: 4;
+    margin: 0;
+    text-align: left;
+}
+
+.Cardbox {
+    display: flex;
+    z-index: 6;
+    background-color: #ffffffbe;
+    padding: 1vw;
+    margin-top: 2vw;
+    border-radius: 2vw;
+    max-width: 90vw;
+    height: 22vw;
+    gap: 1vw;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    z-index: 7; 
+    background-color: #0193F3;
+    border-radius: 2vw;
+    width: 22vw;
+    height: 22vw;
+    cursor: pointer;
+
+    transition: background-color 150ms ease-in-out;
+}
+.card:hover {
+    background-color: #FF6E00;
+}
+.cardimg {
+    padding: 2vw;
+    max-width: 7vw;
+    max-height: 7vw;
+}
+.card:hover .ButtonBack {
+    background-color: #ffffff;
+    color: #FF6E00;
+    transition: background-color 300ms, color 300ms;
+}
+
+.ButtonLink {
+    display: flex;
+    z-index: 9;
+    text-decoration: none;
+}
+.ButtonBack {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    color: #ffffff;
+    font-size: 1vw;
+
+    display: flex;
+    z-index: 9;
+    justify-content: center;
+    align-items: center;
+    background-color: #FF6E00;
+    border-radius: 10vw;
+    width: 10vw;
+    height: 2.4vw;
+    margin-left: 2vw;
+}
+.CardDetailBox {
+    padding: 0 2vw;
+}
+.CardDetailBox p {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    color: #ffffff;
+    font-size: 1vw;
+    margin-bottom: 1vw;
+}
+.CardDetailBox h1 {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    color: #ffffff;
+    font-size: 2vw;
+    margin-top: -1vw;
+    margin-bottom: 1vw;
+}
+
+/*Page 03*/
+.page03 {
+    display: flex;
+    justify-content: center;
+}
+.aboutusback {
+    width: 97vw;
+    height: 16vw;
+    margin-top: 5vw;
+    background-color: #0193F3;
+    border-radius: 2vw;
+    margin-bottom: 1vw;
+}
+.aboutbox {
+    margin-left: 3.5vw;
+    margin-top: 3vw;
+    max-width: 90vw;
+    max-height: 10vw;
+}
+.aboutbox h2 {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    color: #ffffff;
+    font-size: 2vw;
+    line-height: 2vw;
+}
+.aboutbox p {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    color: #ffffff;
+    font-size: 1vw;
+    line-height: 1.4vw;
+}
+
+/*Responsive*/
+@media (max-width: 1280px) {
+    .Chatbot {
+        margin-left: 88vw;
+    }
+    .Cardbox {
+        max-width: 89.5vw;
+    }
+}
+
+@media (max-width: 720px) {
+    .Chatbot {
+        margin-left: 87vw;
+    }
+    .Cardbox {
+        max-width: 88.5vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .Chatbot {
+        margin-left: 86vw;
+    }
+    .Cardbox {
+        max-width: 87.5vw;
+    }
+}
